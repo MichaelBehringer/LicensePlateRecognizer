@@ -1,0 +1,1 @@
+curl -F "upload=@kfz.jpg" -F regions=de -H "Authorization: Token 5e52f71a0abd5e1c22900d2882effd115a058ab8" https://api.platerecognizer.com/v1/plate-reader/
