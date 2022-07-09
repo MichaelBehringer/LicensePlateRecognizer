@@ -16,8 +16,8 @@
  3. python apiRecognizer.py
 (tested with python 3.9.x)
 ## Api:
-URL: https://platerecognizer.com/
-Token: (FÜNF)e52f71a0abd5e1c22900d2882effd115a058ab(ACHT)
-Pricing: Free
-Calls: 2500/month (max: 1/second)
-Doc: https://docs.platerecognizer.com/
+<b>URL</b>: https://platerecognizer.com/<br />
+<b>Token</b>: (FÜNF)e52f71a0abd5e1c22900d2882effd115a058ab(ACHT)<br />
+<b>Pricing</b>: Free<br />
+<b>Calls</b>: 2500/month (max: 1/second)<br />
+<b>Doc</b>: https://docs.platerecognizer.com/<br />
