@@ -12,8 +12,9 @@
 (tested with python 3.9.x)
 ## Installation (API Recognition)
  1. pip install requests
- 2. cd pi
- 3. python apiRecognizer.py
+ 2. pip install opencv-python
+ 3. cd pi
+ 4. python apiRecognizer.py
 (tested with python 3.9.x)
 ## Api:
 <b>URL</b>: https://platerecognizer.com/<br />
