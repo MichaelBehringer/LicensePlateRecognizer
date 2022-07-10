@@ -6,13 +6,14 @@ import time
 import os
 from pprint import pprint
 
+stCapture = time.time()
 cam = cv2.VideoCapture(0)
 cam.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
 
 ret, image = cam.read()
 
-scale = 0.5  # whatever scale you want
+scale = 0.5 
 frame_darker = (image * scale).astype(numpy.uint8)
 
 now = datetime.now()
@@ -21,9 +22,9 @@ dt_string = now.strftime("%Y%m%d_%H%M%S")
 path = 'camera/img_'+dt_string+'.jpg'
 
 cv2.imwrite(path, frame_darker)
-#cv2.imwrite(path, image)
 cam.release()
 cv2.destroyAllWindows()
+etCapture = time.time()
 
 def lookupPlate(image):
     regions = ['de']
@@ -35,13 +36,14 @@ def lookupPlate(image):
             headers={'Authorization': 'Token 5e52f71a0abd5e1c22900d2882effd115a058ab8'})
     return response
 
-st = time.time()
+stLookup = time.time()
 response = lookupPlate(path)
-et = time.time()
+etLookup = time.time()
 
 jsonResponse = response.json()
 pprint(jsonResponse)
 print('\n')
 print('Image: ' + os.path.abspath(path))
-print('Request time:', et - st, 'seconds')
+print('Capture time:', etCapture - stCapture, 'seconds')
+print('Lookup time:', etLookup - stLookup, 'seconds')
 print('Plate:', jsonResponse['results'][0]['candidates'][0]['plate'])
